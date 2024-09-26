@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  font-family: Calibri, sans-serif;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+.App {
+  text-align: center;
+}
+/*navbar*/
+
+.navbar-con {
+  height: 60px;
+  box-shadow: 0 4px 8px #cecbcb;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  padding-left: 25px;
+  height: 60px;
+}
+.navbar-links {
+  color: #19a8b3;
+}
+.navbar-links:hover {
+  text-decoration: underline;
+  color: aliceblue;
+}
+.options {
+  display: flex;
+  width: 75%;
+  justify-content: space-evenly;
+}
+.hover {
+  border: 1px solid darkslategray;
+  padding: 0px 23px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+}
+
+/*Edit*/
+.edit-all {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 50px;
+}
+.edit-con {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 50px;
+  margin-top: 50px;
+}
+.input-con {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 26px;
+  align-items: center;
+}
+.bg-img {
+  width: 300px;
+  height: 420px;
+  background-position: center;
+  background-size: contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  box-shadow: 0 4px 8px #cecbcb;
+}
+.bg-img h3 {
+  width: 207px;
+}
+input {
+  width: 350px;
+  height: 46px;
+  padding: 30px;
+  border-radius: 41px;
+  border: none;
+  box-shadow: 0 4px 8px #cecbcb;
+}
+.message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Dancing Script", cursive;
+}
+.options h3 {
+  cursor: pointer;
+}
+.voucher {
+  background-color: darkslategray;
+  color: aliceblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  width: 75%;
+  border-radius: 31px;
+}
+.voucher:hover {
+  background-color: aliceblue;
+  color: darkslategray;
+  border: 1px solid darkslategray;
+  cursor: pointer;
+}
+/*gift images*/
+.temp-img-con {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 65px;
+  gap: 102px;
+}
+
+/*HOME*/
+
+.splash-con {
+  height: 100vh;
+  display: flex;
+}
+.splash-img {
+  background-position: center;
+  width: 50%;
+  background-repeat: no-repeat;
+  height: 100%;
+}
+.splash-text {
+  color: aliceblue;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  font-size: xx-large;
+}
+.splash-btn {
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  padding: 8px;
+  border: 1px solid aliceblue;
+  color: #19a8b3;
+  gap: 10px;
+  border-radius: 10px;
+}
+.splash-btn:hover {
+  background-color: aliceblue;
+  color: #19a8b3;
+  cursor: pointer;
+}
+
+/*recorder*/
+.voice-recorder_maincontainer {
+  width: 300px;
+}
+.hover:hover {
+  background-color: darkslategray;
+  color: aliceblue;
+}
+.temps-img {
+  transition: ease-in-out 0.3s;
+}
+.temps-img:hover {
+  transform: translateY(-10px);
+}
+
+/*Swiper*/
+
+.swiper-img-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-color: aliceblue;
+}
+.brand-logo {
+  width: 160px;
+}
