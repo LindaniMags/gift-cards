@@ -19,6 +19,8 @@ import w1 from "./images/Wedding/wed1.jpeg";
 import w2 from "./images/Wedding/wed2.jpeg";
 import w3 from "./images/Wedding/wed3.jpeg";
 
+import { TiThMenu } from "react-icons/ti";
+
 const Navbar = () => {
   /*Image Lists */
   const bdayImgList = [b0, b1, b2, b3, b4, b4];
@@ -33,13 +35,24 @@ const Navbar = () => {
           <img
             src={pic}
             alt="bday"
-            style={{ height: "400px", boxShadow: "0 4px 8px #cecbcb" }}
+            style={{ boxShadow: "0 4px 8px #cecbcb" }}
             className="temps-img"
           />
         </div>
       ))}
     </div>
   );
+
+  const [burgerMenu, setburgerMenu] = useState("none");
+  const [menu, setMenu] = useState(false);
+  const toggleMenu = () => {
+    setMenu(!menu);
+    if (menu) {
+      setburgerMenu("none");
+    } else {
+      setburgerMenu("flex");
+    }
+  };
   const handleBirthday = () => {
     setTemps(
       <div className="temp-img-con">
@@ -48,7 +61,7 @@ const Navbar = () => {
             <img
               src={pic}
               alt="bday"
-              style={{ height: "400px", boxShadow: "0 4px 8px #cecbcb" }}
+              style={{ boxShadow: "0 4px 8px #cecbcb" }}
               className="temps-img"
             />
           </div>
@@ -64,7 +77,7 @@ const Navbar = () => {
             <img
               src={pic}
               alt="bday"
-              style={{ height: "400px", boxShadow: "0 4px 8px #cecbcb" }}
+              style={{ boxShadow: "0 4px 8px #cecbcb" }}
               className="temps-img"
             />
           </div>
@@ -80,7 +93,7 @@ const Navbar = () => {
             <img
               src={pic}
               alt="bday"
-              style={{ height: "400px", boxShadow: "0 4px 8px #cecbcb" }}
+              style={{ boxShadow: "0 4px 8px #cecbcb" }}
               className="temps-img"
             />
           </div>
@@ -102,6 +115,22 @@ const Navbar = () => {
         <Link to="/">
           <h1>GIFT CARDS</h1>
         </Link>
+        <div className="menu-con">
+          <div className="menu-icon-con">
+            <TiThMenu className="menu-icon" onClick={toggleMenu} />
+          </div>
+          <div className="options menu" style={{ display: burgerMenu }}>
+            <h3 onClick={handleBirthday} className="hover">
+              Birthday
+            </h3>
+            <h3 onClick={handleWedding} className="hover">
+              Wedding
+            </h3>
+            <h3 onClick={handleGreetings} className="hover">
+              Greetings
+            </h3>
+          </div>
+        </div>
         <div className="options">
           <h3 onClick={handleBirthday} className="hover">
             Birthday

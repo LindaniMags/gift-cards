@@ -1,6 +1,10 @@
 import { useState } from "react";
 import { VoiceRecorder } from "react-voice-recorder-player";
 
+import { CiMicrophoneOn } from "react-icons/ci";
+import { BsEnvelope } from "react-icons/bs";
+import { AiOutlineGift } from "react-icons/ai";
+
 import adp from "./images/Spons/adp.png";
 import bnb from "./images/Spons/airbnb.png";
 import amazon from "./images/Spons/amazon.png";
@@ -14,6 +18,7 @@ import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 import "swiper/css/bundle";
 
 const Edit = (props) => {
+  const [message, setMessage] = useState("");
   const styles = {
     mainContainerStyle: {
       backgroundColor: "gray",
@@ -39,8 +44,46 @@ const Edit = (props) => {
       width: "100%",
     },
   };
-
-  const [message, setMessage] = useState("");
+  const [inputEntry, setInputEntry] = useState(
+    <div className="message">
+      <input
+        type="text"
+        placeHolder="Add Message"
+        value={message}
+        onChange={(event) => {
+          setMessage(event.target.value);
+        }}
+      ></input>
+    </div>
+  );
+  const handleRec = () => {
+    setInputEntry(
+      <div className="voice-rec-con">
+        <VoiceRecorder />
+      </div>
+    );
+  };
+  const handlemsg = () => {
+    setInputEntry(
+      <div className="message">
+        <input
+          type="text"
+          placeHolder="Add Message"
+          value={message}
+          onChange={(event) => {
+            setMessage(event.target.value);
+          }}
+        ></input>
+      </div>
+    );
+  };
+  const handleVouch = () => {
+    setInputEntry(
+      <div className="voucher">
+        <h3>Add Voucher</h3>
+      </div>
+    );
+  };
   return (
     <div>
       <div>
@@ -88,6 +131,15 @@ const Edit = (props) => {
         >
           <h3>{message}</h3>
         </div>
+        <div className="controller-con">
+          <div className="input-entry">{inputEntry}</div>
+          <div className="controllers">
+            <CiMicrophoneOn onClick={handleRec} />
+            <BsEnvelope onClick={handlemsg} />
+            <AiOutlineGift onClick={handleVouch} />
+          </div>
+        </div>
+
         <div className="input-con">
           <div className="message">
             <input
@@ -100,7 +152,7 @@ const Edit = (props) => {
             ></input>
           </div>
           <div className="voice-rec-con">
-            <VoiceRecorder />
+            <VoiceRecorder mainContainerStyle={{ width: "200px" }} />
           </div>
           <div className="voucher">
             <h3>Add Voucher</h3>
